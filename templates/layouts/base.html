@@ -1,0 +1,47 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+     <link href="/bootstrap/css/bootstrap.css" rel="stylesheet">
+</head>
+<body class="d-flex flex-column h-100">
+<header class="header">
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand">AskTimur</a>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+
+            <div class="d-flex justify-content-between gap-3">
+                <div class="border">
+                    <img src="img.jpg" width="50" height="50"/>
+                </div>
+                <div class="d-flex flex-column justify-content-between">
+                    <div>Dr. Pepper</div>
+                    <div>
+                        <a href="/settings.html">Settings</a>
+                        <a href="/logout.html">Log out</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="row">
+    {% block content %}
+    Hello, it's empty block
+    {% endblock %}
+</div>
+<footer class="fixed-bottom p-3 bg-light">
+    <div class="container">
+        <span class="text-muted">Place sticky footer content here.</span>
+    </div>
+</footer>
+
+</body>
+</html>
