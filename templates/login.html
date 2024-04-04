@@ -1,10 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'layouts/base.html' %}
+{% load static %}
 
-</body>
-</html>
+
+
+{% block content %}
+    <h2 class="new_questions" style="display: inherit">Log In </h2>
+    <p class="wrong-password">Sorry, wrong password!</p>
+
+    <div class="mb-3 row" style="margin-top: 15px">
+        <label for="flogin" class="col-sm-2 col-form-label">Login</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" id="flogin"
+                   placeholder="Enter your login here">
+        </div>
+    </div>
+    <div class="mb-3 row">
+        <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+        <div class="col-sm-6">
+            <input type="password" class="form-control" placeholder="Enter your password here" id="inputPassword">
+            <div style="display: flex; align-items: center; gap: 10px">
+                <button type="button" class="btn btn-dark" style="margin-top: 30px">Log in!</button>
+                <a href="{% url 'signup' %}" style="margin-top: 25px; margin-left: 25px; display: inline-block">create new account</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}  

@@ -1,4 +1,3 @@
-
 {% load static %}
 <!doctype html>
 <html lang="en">
@@ -6,9 +5,8 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>Askme</title>
-    <link href="/static/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+    <link href="{% static 'bootstrap/css/bootstrap.css' %}" rel="stylesheet">
     <link href="{% static '/css/index.css' %}" rel="stylesheet">
-
 </head>
 
 <body class="d-flex flex-column h-100">
@@ -23,7 +21,7 @@
                     aria-label="Search"
             />
             <button class="btn btn-outline-success " type="submit"
-                    style="background-color:dimgrey; color:white; border-color: black">Search
+                    style="background-color:dimgrey; color:white; border-color: black"><a href="{% url 'ask' %}" style="color:white; text-decoration: none">Ask</a>
             </button>
         </form>
 
@@ -34,7 +32,7 @@
             <div class="d-flex flex-column justify-content-between">
                 <div style="color:darkgray">Dr. Pepper</div>
                 <div class="links">
-                    <a href="/settings.html">Settings</a>
+                    <a href="{% url 'settings' %}">Settings</a>
                     <a href="/logout.html">Log out</a>
                 </div>
             </div>
@@ -45,8 +43,10 @@
 <main class="container-fluid container-lg mt-3">
 
     <div class="row">
+    <div class="col-8">
         {% block content %}
         {% endblock %}
+    </div>
         <div class="col-4"  style="padding-left: 100px">
             <h3>Popular Tags</h3>
             <div class="row">
@@ -61,11 +61,11 @@
             </div>
             <h3 class="mt-5">Best Members</h3>
             <div>
-                <a href="/member.html" class="d-block">Mr. Freeman</a
-                ><a href="/member.html" class="d-block">Mr. Freeman</a
-            ><a href="/member.html" class="d-block">Mr. Freeman</a
-            ><a href="/member.html" class="d-block">Mr. Freeman</a
-            ><a href="/member.html" class="d-block">Mr. Freeman</a>
+                <a href="#" class="d-block">Mr. Freeman</a
+                ><a href="#" class="d-block">Mr. Freeman</a
+            ><a href="#" class="d-block">Mr. Freeman</a
+            ><a href="#" class="d-block">Mr. Freeman</a
+            ><a href="#" class="d-block">Mr. Freeman</a>
             </div>
         </div>
     </div>
@@ -75,10 +75,5 @@
         <span>Design by Timur Isaev</span>
     </div>
 </footer>
-<script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"
-></script>
 </body>
 </html>
