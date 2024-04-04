@@ -1,0 +1,36 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="col-8">
+        <div class="mb-3 row">
+            <label for="flogin" class="col-sm-2 col-form-label">Login</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" id="flogin" value="dr_pepper" readonly>
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label for="femail" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-6">
+                <input type="email" class="form-control" id="femail" placeholder="example@gmail.com"
+                       value="dr.pepper@mail.ru">
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label for="fnickname" class="col-sm-2 col-form-label">NickName</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" id="fnickname" value="Dr.Pepper">
+            </div>
+        </div>
+
+        <div class="mb-3 row">
+            <label for="formFile" class="col-sm-2 col-form-label">Upload avatar</label>
+            <div class="col-sm-6">
+                <img class="question-row-img" src="../static/img/photo_2023-10-11_14-38-49.jpg"
+                     alt="question_img" style="width: 30%; margin-bottom: 10px">
+                <input class="form-control" type="file" id="formFile">
+                <button type="button" class="btn btn-success" style="margin-top: 30px; background-color: #e6dbb9; border-color: black">Save</button>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block content %}
+    <h2 class="new_questions" style="display: inherit">Sign Up </h2>
+    <p class="wrong-password">Sorry, wrong password!</p>
+
+    <div class="mb-3 row" style="margin-top: 15px">
+        <label for="flogin" class="col-sm-2 col-form-label">Login</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" id="flogin">
+        </div>
+    </div>
+    <div class="mb-3 row">
+        <label for="femail" class="col-sm-2 col-form-label">Email</label>
+        <div class="col-sm-6">
+            <input type="email" class="form-control" id="femail" placeholder="example@gmail.com"
+            >
+        </div>
+    </div>
+    <div class="mb-3 row">
+        <label for="fnickname" class="col-sm-2 col-form-label">NickName</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" id="fnickname">
+        </div>
+    </div>
+    <div class="mb-3 row">
+        <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+        <div class="col-sm-6">
+            <input type="password" class="form-control" id="inputPassword">
+        </div>
+    </div>
+    <div class="mb-3 row">
+        <label for="inputPassword" class="col-sm-2 col-form-label">Repeat password</label>
+        <div class="col-sm-6">
+            <input type="password" class="form-control" id="inputPassword">
+        </div>
+    </div>
+    <div class="mb-3 row">
+        <label for="formFile" class="col-sm-2 col-form-label">Upload avatar</label>
+        <div class="col-sm-6">
+            <input class="form-control" type="file" id="formFile">
+            <button type="button" class="btn btn-dark" style="margin-top: 30px">Register!</button>
+        </div>
+    </div>
+{% endblock %}

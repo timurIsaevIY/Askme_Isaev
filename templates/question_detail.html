@@ -1,0 +1,20 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+    {% block content %}
+
+    <div class="d-flex flex-column">
+        <h1>Question</h1>
+        <p class="wrong-password">Please, fill in!</p>
+    </div>
+        {% include 'layouts/question.html' %}
+        {% include 'layouts/answer.html' %}
+        <hr class="solid col-8" style="border-top: 3px solid black;"/>
+
+    <form>
+    <div class="col-8">
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="Enter your answer here..."></textarea>
+        <button type="submit" class="btn btn-dark" style="margin-top: 15px; margin-bottom: 50px">Answer!</button>
+    </div>
+    </form>
+    {% endblock %}

@@ -1,0 +1,27 @@
+.links a {
+            color: darkgray;
+        }
+
+        a {
+            color: #5c636a;
+        }
+
+        .card {
+            background-color:#e6dbb9;
+        }
+
+        .paginator-color a {
+            color: white;
+            border-color: rgba(0, 0, 0, 0.21);
+            background-color: rgba(105, 105, 105, 0.81);
+        }
+        .container {
+            color: #696969FF;
+            justify-content: space-between;
+        }
+        .bg1 {
+            background-color:#e6dbb9;
+        }
+        .input-group {
+            background-color:#e6dbb9;
+        }
