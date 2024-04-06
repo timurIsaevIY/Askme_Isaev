@@ -2,35 +2,35 @@
 {% load static %}
 
 {% block content %}
-    <div class="d-flex gap-3 align-items-center">
+    <div class="d-flex flex-column">
         <h1>New Question</h1>
+        <p class="wrong-password" style="color: red">Please, fill in!</p>
     </div>
     
-    <div class="row new-question ">
+    <div class="row new-question">
         <form>
             <div class="row mb-3">
-                <label for="ftitle" class="col-sm-2 col-form-label">Title</label>
+                <label for="ftitle" class="col-sm-1 col-form-label">Title</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="ftitle">
                 </div>
             </div>
 
             <div class="row mb-3">
-                <label for="ftext" class="col-sm-2 col-form-label">Text</label>
+                <label for="ftext" class="col-sm-1 col-form-label">Text</label>
 
                 <div class="col-sm-10">
-                    <!--<input type="text" class="form-control" id="ftext">-->
-                    <textarea class="form-control" id="exampleFormControlTextarea" rows="15"></textarea>
+                    <textarea class="form-control" id="ftext" rows="15"></textarea>
                 </div>
             </div>
 
             <div class="row mb-3">
-                <label for="ftags" class="col-sm-2 col-form-label">Tags</label>
+                <label for="ftags" class="col-sm-1 col-form-label">Tags</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="ftags">
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary" style="margin-left: 145px; margin-bottom: 60px; color: white;
+            <button type="submit" class="btn btn-primary" style="margin-left: 73px; margin-bottom: 60px; color: white;
             border-color: rgba(0, 0, 0, 0.5);
             background-color: #1b1b1b;">Ask!</button>
         </form>
