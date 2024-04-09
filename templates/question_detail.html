@@ -5,10 +5,14 @@
 
     <div class="d-flex flex-column">
         <h1>Question</h1>
-        <p class="wrong-password">Please, fill in!</p>
+        <p class="wrong-password" style="color: red">Please, fill in!</p>
     </div>
         {% include 'layouts/question.html' %}
+        {% for answer in answers %}
         {% include 'layouts/answer.html' %}
+    {% endfor %}
+
+    {% include 'layouts/pagination.html' with page_obj=answers%}
         <hr class="solid col-8" style="border-top: 3px solid black;"/>
 
     <form>
