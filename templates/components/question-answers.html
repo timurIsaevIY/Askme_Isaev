@@ -1,0 +1,4 @@
+{% load static %}
+{% load custom_filters %}
+
+<a class="col-4" href="{% url 'question'  question_id=question.id %}">answers ({{ answers|get_answers_count:question.id }})</a>

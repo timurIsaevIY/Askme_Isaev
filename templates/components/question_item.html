@@ -1,0 +1,31 @@
+{% load static %}
+<article class="card mb-3 w-100" >
+    <div class="row g-0">
+        <div class="col-3 p-2">
+            <div class="border w-100 mb-3" style="height: 100px">
+                <img
+                        src="{{ question.user.avatar.url }}"
+                        class="img-fluid rounded-start"
+                        alt="question_img"
+                />
+            </div>
+            <div class="input-group flex-nowrap">
+                <input type="number" value="{{ question.likes }}" class="form-control"/>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card-body">
+                <h5 class="card-title">
+                    <a href="{% url 'question' question_id=question.id %}">{{ question.title|slice:"30" }}</a>
+                </h5>
+                <p class="card-text">
+                    {{ question.text|slice:"150" }}
+                </p>
+                <div class="row">
+                {% include 'components/question-answers.html' %}
+                {% include 'components/question_tags.html' %}
+            </div>
+                </div>
+        </div>
+    </div>
+</article>

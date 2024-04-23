@@ -1,0 +1,7 @@
+<div class="col-8">
+    <span>Tags</span>
+    {% for tag in question.tags.all  %}
+        <a href="{% url 'tag' selected_tag=tag.title %}">{{ tag.title }}</a>
+    {% endfor %}
+</div>
+    
