@@ -3,44 +3,52 @@
 
 {% block content %}
     <h2 class="new_questions" style="display: inherit">Sign Up </h2>
-    <p class="wrong-password" style="color: red">Sorry, wrong password!</p>
-
-    <div class="mb-3 row" style="margin-top: 15px">
-        <label for="flogin" class="col-sm-2 col-form-label">Login</label>
-        <div class="col-sm-6">
-            <input type="text" class="form-control" id="flogin">
+    {% if form.errors %}
+        {% for key, key_errors in form.errors.items %}
+             {% for error in key_errors %}
+            <p class="wrong-password" style="color: red">{{ error }}</p>
+             {% endfor %}
+        {% endfor %}
+    {% endif %}
+    <form method="post" action="">
+        {% csrf_token %}
+        <div class="mb-3 row" style="margin-top: 15px">
+            <label for="login" class="col-sm-2 col-form-label">Login</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" id="login" name="username" value="{{ form.cleaned_data.username }}">
+            </div>
         </div>
-    </div>
-    <div class="mb-3 row">
-        <label for="femail" class="col-sm-2 col-form-label">Email</label>
-        <div class="col-sm-6">
-            <input type="email" class="form-control" id="femail" placeholder="example@gmail.com"
-            >
+        <div class="mb-3 row">
+            <label for="email" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-6">
+                <input type="email" class="form-control" id="email" name="email" value="{{ form.cleaned_data.email }}" placeholder="example@gmail.com"
+                >
+            </div>
         </div>
-    </div>
-    <div class="mb-3 row">
-        <label for="fnickname" class="col-sm-2 col-form-label">NickName</label>
-        <div class="col-sm-6">
-            <input type="text" class="form-control" id="fnickname">
+        <div class="mb-3 row">
+            <label for="nickname" class="col-sm-2 col-form-label">NickName</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" id="nickname">
+            </div>
         </div>
-    </div>
-    <div class="mb-3 row">
-        <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
-        <div class="col-sm-6">
-            <input type="password" class="form-control" id="inputPassword">
+        <div class="mb-3 row">
+            <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+            <div class="col-sm-6">
+                <input type="password" class="form-control" id="inputPassword" name="password" value="{{ form.cleaned_data.password }}">
+            </div>
         </div>
-    </div>
-    <div class="mb-3 row">
-        <label for="inputPassword1" class="col-sm-2 col-form-label">Repeat password</label>
-        <div class="col-sm-6">
-            <input type="password" class="form-control" id="inputPassword1">
+        <div class="mb-3 row">
+            <label for="inputPassword1" class="col-sm-2 col-form-label">Repeat password</label>
+            <div class="col-sm-6">
+                <input type="password" class="form-control" id="inputPassword1" name="confirm_password">
+            </div>
         </div>
-    </div>
-    <div class="mb-3 row">
-        <label for="formFile" class="col-sm-2 col-form-label">Upload avatar</label>
-        <div class="col-sm-6">
-            <input class="form-control" type="file" id="formFile">
-            <button type="button" class="btn btn-dark" style="margin-top: 30px">Register!</button>
+        <div class="mb-3 row">
+            <label for="formFile" class="col-sm-2 col-form-label">Upload avatar</label>
+            <div class="col-sm-6">
+                <input class="form-control" type="file" id="formFile">
+                <button type="submit" class="btn btn-dark" style="margin-top: 30px">Register!</button>
+            </div>
         </div>
-    </div>
+    </form>
 {% endblock %}

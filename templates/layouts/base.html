@@ -28,19 +28,24 @@
                     style="background-color:dimgrey; color:white; border-color: black"><a href="{% url 'ask' %}" style="color:white; text-decoration: none">Ask</a>
             </button>
         </form>
-
-        <div class="d-flex justify-content-between gap-3">
-            <div class="border">
-                <img src="" width="50" height="50"/>
-            </div>
-            <div class="d-flex flex-column justify-content-between">
-                <div style="color:darkgray">Dr. Pepper</div>
-                <div class="links">
-                    <a href="{% url 'settings' %}">Settings</a>
-                    <a href="/logout.html">Log out</a>
+        
+        {% if user.is_authenticated %}
+            <div class="d-flex justify-content-between gap-3">
+                <div class="border">
+                    <img src="" width="50" height="50"/>
+                </div>
+                <div class="d-flex flex-column justify-content-between">
+                    <div style="color:darkgray">Dr. Pepper</div>
+                    <div class="links">
+                        <a href="{% url 'settings' %}">Settings</a>
+                        <a href="{% url 'logout' %}">Log out</a>
+                    </div>
                 </div>
             </div>
-        </div>
+        {% else %}
+            <a href="{% url 'signup' %}" style="margin-top: 25px; margin-left: 25px; display: inline-block">Sign up!</a>
+            <a href="{% url 'login' %}" style="margin-top: 25px; margin-left: 25px; display: inline-block">Log in!</a>
+        {% endif %}
     </div>
 </nav>
 

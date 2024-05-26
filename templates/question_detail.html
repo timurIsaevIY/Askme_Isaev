@@ -15,9 +15,10 @@
     {% include 'layouts/pagination.html' with page_obj=answers%}
         <hr class="solid col-8" style="border-top: 3px solid black;"/>
 
-    <form>
+    <form method="post" action="{% url 'answer_question' question_id=question.id %}">
+    {% csrf_token %}
     <div class="col-8">
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="Enter your answer here..."></textarea>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="Enter your answer here..." name="text"></textarea>
         <button type="submit" class="btn btn-dark" style="margin-top: 15px; margin-bottom: 50px">Answer!</button>
     </div>
     </form>

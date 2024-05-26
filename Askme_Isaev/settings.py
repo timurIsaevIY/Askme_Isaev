@@ -28,6 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'huggingface.co',
     '127.0.0.1',
+    'localhost'
                  ]
 
 
@@ -88,7 +89,7 @@ WSGI_APPLICATION = 'Askme_Isaev.wsgi.application'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "askme",
+        "NAME": "myproject",
         "USER": "admin",
         "PASSWORD": "admin",
         "HOST": "127.0.0.1",

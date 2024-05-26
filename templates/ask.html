@@ -4,15 +4,21 @@
 {% block content %}
     <div class="d-flex flex-column">
         <h1>New Question</h1>
-        <p class="wrong-password" style="color: red">Please, fill in!</p>
     </div>
-    
-    <div class="row new-question">
-        <form>
+    {% if question_form.errors %}
+        {% for key, key_errors in question_form.errors.items %}
+             {% for error in key_errors %}
+            <p class="wrong-password" style="color: red">{{ error }}</p>
+             {% endfor %}
+        {% endfor %}
+    {% endif %}
+    <div class="row new-question">  
+        <form method="post" action="">
+            {% csrf_token %}
             <div class="row mb-3">
                 <label for="ftitle" class="col-sm-1 col-form-label">Title</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="ftitle">
+                    <input type="text" class="form-control" id="ftitle" name="title">
                 </div>
             </div>
 
@@ -20,14 +26,14 @@
                 <label for="ftext" class="col-sm-1 col-form-label">Text</label>
 
                 <div class="col-sm-10">
-                    <textarea class="form-control" id="ftext" rows="15"></textarea>
+                    <textarea class="form-control" id="ftext" rows="15" name="text"></textarea>
                 </div>
             </div>
 
             <div class="row mb-3">
                 <label for="ftags" class="col-sm-1 col-form-label">Tags</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="ftags">
+                    <input type="text" class="form-control" id="ftags" name="tags">
                 </div>
             </div>
             <button type="submit" class="btn btn-primary" style="margin-left: 73px; margin-bottom: 60px; color: white;
